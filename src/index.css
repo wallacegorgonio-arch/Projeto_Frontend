@@ -1,13 +1,238 @@
-body {
+*{
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.logotipo{
+  width: 140px;
+  right: 240px;
 }
+
+:root{
+  --primary-color: #f80;
+  --secondary-color: #00498d;
+  --dark-primary-color: #e07800;
+  --dark-secondary-color: #00315f;
+  --ligth-color: #e9e9e9;
+  --dark-color: #2c2c2c;
+}
+
+body{
+  font-size: "arial";
+  color: var(--dark-color);
+}
+
+a{
+  text-decoration: none;
+  color: unset;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+
+}
+
+/* personalização do menu de navegação nav */
+
+.nav{
+  background-color: #fff;
+  padding: 0.01rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  box-shadow: 10px 0px 10px #ebebeb;
+  z-index: 1;
+
+}
+
+.nav .inner-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin-inline: auto;
+
+}
+
+/* personalização da lista */
+
+nav ul{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+
+}
+
+/* personalização do carrinho de compras e dos icones */
+
+.nav-icon-container{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav-icon-container svg{
+  height: 1.5rem;
+}
+
+.nav-icon-container .shopping-cart{
+ position: relative;
+ cursor: pointer;
+}
+
+.nav-icon-container .shopping-cart .products-count{
+ content: "";
+ position: absolute;
+ background-color: #f00;
+ width: 1rem;
+ height: 1rem;
+ bottom: -8px;
+ left: -8px;
+ border-radius: 50%;
+ color: #fff;
+ padding: 0.4rem;
+ font-size: 0.6rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+/* personalisação do input de pesquisa e do icone */
+
+.search-input-conteiner{
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--dark-color);
+  padding: 0.5rem;
+  margin-right: 1rem;
+
+}
+
+.search-input-conteiner input{
+  border: none;
+  outline: none;
+}
+
+.search-input-conteiner svg{
+  height: 1rem;
+  color: #808080;
+}
+
+/* animação da lista ao passar o mouse em cima */
+
+nav ul li:hover{
+ transform: translateY(-4px) ;
+ transition: all 0.2s ;
+ font-weight: bold;
+}
+
+.menu-button{
+  display: none;
+}
+
+/* fim navbar */
+
+/* personalização header */
+header{
+  background-color: var(--primary-color);
+
+}
+
+header .inner-content{
+  max-width: 1600px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 4rem;
+  gap: 4rem;
+
+}
+
+header .left-side{
+  color: #fff;
+}
+
+header .left-side h2{
+  font-size: 2.5rem;
+}
+
+header .left-side p{
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.see-more-btn {
+  background-color: var(--primary-color);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: flex;
+  max-width: 130px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.see-more-btn:hover{
+  background-color: var(--dark-primary-color);
+  max-width: 200px;
+
+}
+
+.img-side{
+  width: 100%;
+ 
+}
+/* fim header */
+
+/* media nav e header */
+@media(max-width: 920px){
+  .nav h1{
+    font-size: 1.2rem;
+  }
+
+  header .inner-content{
+    gap: 2rem;
+    padding: 1.5rem;
+    padding-top: 3rem;
+
+  }
+
+  header .left-side h2{
+    font-size: 1.8rem;
+
+  }
+
+  nav{
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    padding-bottom: 1rem;
+    display: none;
+  }
+
+  nav.show{
+    display: block;
+  }
+
+  nav ul{
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  nav ul li{
+    text-align: center;
+    padding: 0.8rem;
+    
+  }
+
+  .menu-button{
+    display: inline;
+  }
+}
+
