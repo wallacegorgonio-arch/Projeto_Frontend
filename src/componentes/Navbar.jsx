@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { faBars, faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
-export default function Navbar() {
+export default function Navbar({setShowSidebarcart}) {
   const [show, setshow] = useState (false);
   return (
        <div className="nav">
@@ -38,7 +38,7 @@ export default function Navbar() {
               <input type='search' placeholder='Procurar'/>
               <FontAwesomeIcon icon={faSearch}/>
           </div>
-          <button className='shopping-cart'>
+          <button className='shopping-cart' onClick={() => setShowSidebarcart(true)} >
             <FontAwesomeIcon icon={faShoppingCart}/>
             <div className='products-count'>0</div>
           </button>
@@ -48,5 +48,5 @@ export default function Navbar() {
         </div>
         </div>
       </div>
-  )
+  );
 }
